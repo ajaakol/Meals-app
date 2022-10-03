@@ -11,9 +11,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   })
 
   useLayoutEffect(() => {
-    const categoryTitle = CATEGORIES.find(
-      (category) => category.id === CategoryId,
-    ).title
+    const categoryTitle = CATEGORIES.find((category) => category.id === CategoryId).title
 
     navigation.setOptions({
       title: categoryTitle,
@@ -24,6 +22,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
     const item = itemData.item
 
     const mealItemProps = {
+      id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       affordability: item.affordability,
